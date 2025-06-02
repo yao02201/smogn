@@ -274,6 +274,8 @@ def smoter(
                 ## concatenate under-sampling
                 ## results to modified training set
                 data_new = pd.concat([omit_obs, data_new])
+        else:
+            data_new = pd.concat([b_index[i], data_new]) #add non-oversampling data
     
     ## rename feature headers to originals
     data_new.columns = feat_names
